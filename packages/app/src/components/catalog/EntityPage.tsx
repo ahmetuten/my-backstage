@@ -57,6 +57,10 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import {
+  EntityJiraOverviewCard,
+  isJiraAvailable,
+} from '@roadiehq/backstage-plugin-jira';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -66,6 +70,7 @@ const techdocsContent = (
   </EntityTechdocsContent>
 );
 
+// entity'nin detayına girildiğinde, üstteki CI/CD tabinin detayı
 const cicdContent = (
   // This is an example of how you can implement your company's logic in entity page.
   // You can for example enforce that all components of type 'service' should use GitHubActions
@@ -121,6 +126,9 @@ const entityWarningContent = (
   </>
 );
 
+//entitylerin içindeki overview tab'i
+// entityWarningContent -> eğer entityde bir problem varsa en üstte çıkan uyarı sayfası
+// sırasıyla: about - relations - links - has subcomponents
 const overviewContent = (
   <Grid container spacing={3} alignItems="stretch">
     {entityWarningContent}
@@ -137,9 +145,18 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+
+    <EntitySwitch>
+      <EntitySwitch.Case if={isJiraAvailable}>
+        <Grid item md={6}>
+          <EntityJiraOverviewCard />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
   </Grid>
 );
 
+// // service türündeki entity detayları
 const serviceEntityPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
@@ -178,6 +195,7 @@ const serviceEntityPage = (
   </EntityLayout>
 );
 
+// website türündeki entity detayları
 const websiteEntityPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
@@ -212,6 +230,7 @@ const websiteEntityPage = (
  * https://material-ui.com/components/grid/#basic-grid.
  */
 
+// default entity detayları, diğerleri bunu override ediyor
 const defaultEntityPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">
@@ -224,6 +243,7 @@ const defaultEntityPage = (
   </EntityLayout>
 );
 
+//if, else if, else gibi
 const componentPage = (
   <EntitySwitch>
     <EntitySwitch.Case if={isComponentType('service')}>
@@ -238,6 +258,7 @@ const componentPage = (
   </EntitySwitch>
 );
 
+// api türündeki entity detayı
 const apiPage = (
   <EntityLayout>
     <EntityLayout.Route path="/" title="Overview">

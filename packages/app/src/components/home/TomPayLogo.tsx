@@ -1,19 +1,6 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core';
 
-// const useStyles = makeStyles({
-//   svg: {
-//     width: 'auto',
-//     height: 28,
-//   },
-//   path: {
-//     fill: '#7df3e1',
-//   },
-// });
-
-const LogoIcon = () => {
-  // const classes = useStyles();
-
+const TomPayLogo = () => {
   return (
     <svg width="293" height="77" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -23,8 +10,8 @@ const LogoIcon = () => {
       <path
         d="M202.5 1.5v74"
         stroke="#313131"
-        stroke-width="2"
-        stroke-linecap="square"
+        strokeWidth="2"
+        strokeLinecap="square"
       />
       <path
         fillRule="evenodd"
@@ -77,4 +64,4 @@ const LogoIcon = () => {
   );
 };
 
-export default LogoIcon;
+export default TomPayLogo;

@@ -4,3 +4,5 @@ describe('App', () => {
     cy.contains('My Company Catalog');
   });
 });
+
+// test otomasyon.

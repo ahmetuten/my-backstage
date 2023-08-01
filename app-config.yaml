@@ -19,6 +19,12 @@ backend:
     # host: 127.0.0.1
   csp:
     connect-src: ["'self'", 'http:', 'https:']
+    img-src: 
+      # "'self'" and 'data' are from the backstage default but must be set since img-src is overriden
+      - "'self'"
+      - 'data:'
+      # Allow your Jira instance for @roadiehq/backstage-plugin-jira
+      - https://ahmetuten.atlassian.net/rest/api/3
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
@@ -49,6 +55,19 @@ proxy:
   # '/test':
   #   target: 'https://example.com'
   #   changeOrigin: true
+  '/jira/api':
+    target: https://ahmetuten.atlassian.net/rest/api/3
+    headers:
+      Authorization:
+        $env: ATATT3xFfGF0NOrLUu88-acXm79_SzNjwXEnBrGz2_VH9st9Yqe7xjG0WbWmS2Gm8Acu4csGigJXPZSsIUD14M-zYuTViZvLT-o8kkleiAgXQdTBpUngFa3RzOM9sxOtgUILOUi4i5aoNvezELRidjMx6GEeJMKdr1GKCIdwsnLBtME7mT9L4MQ=EBB7C781
+      Accept: 'application/json'
+      Content-Type: 'application/json'
+      X-Atlassian-Token: 'nocheck'
+      User-Agent: "MY-UA-STRING"
+
+metadata:
+  annotations:
+    jira/project-key: SIL
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -57,7 +76,7 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
