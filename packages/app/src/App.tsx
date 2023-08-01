@@ -33,6 +33,45 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { BackstageTheme, darkTheme, lightTheme } from '@backstage/theme';
+import { BackstageOverrides } from '@backstage/core-components';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import { HomepageCompositionRoot } from '@backstage/plugin-home';
+import { HomePageTemplate } from './components/home/HomePage';
+
+export const createCustomThemeOverrides = (
+  theme: BackstageTheme,
+): BackstageOverrides => {
+  const purple = '#a271c1';
+  return {
+    BackstageHeader: {
+      header: {
+        width: 'auto',
+        margin: '20px',
+        backgroundImage: '',
+        boxShadow: '',
+        textAlign: 'center',
+        backgroundColor: purple,
+        borderRadius: '10px',
+      },
+    },
+    BackstageSidebar: {
+      drawer: {
+        backgroundColor: purple,
+      },
+    },
+  };
+};
+
+const customTheme: BackstageTheme = {
+  ...lightTheme,
+  overrides: {
+    // These are the overrides that Backstage applies to `material-ui` components
+    ...lightTheme.overrides,
+    // These are your custom overrides, either to `material-ui` or Backstage components.
+    ...createCustomThemeOverrides(lightTheme),
+  },
+};
 
 const app = createApp({
   apis,
@@ -53,11 +92,35 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
+  themes: [
+    {
+      id: 'light-theme',
+      title: 'Light',
+      variant: 'light',
+      Provider: ({ children }) => (
+        <ThemeProvider theme={customTheme}>
+          <CssBaseline>{children}</CssBaseline>
+        </ThemeProvider>
+      ),
+    },
+    {
+      id: 'dark-theme',
+      title: 'Dark',
+      variant: 'dark',
+      Provider: ({ children }) => (
+        <ThemeProvider theme={darkTheme}>
+          <CssBaseline>{children}</CssBaseline>
+        </ThemeProvider>
+      ),
+    },
+  ],
 });
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<Navigate to="catalog" />} />
+    <Route path="/" element={<HomepageCompositionRoot />}>
+      <HomePageTemplate />
+    </Route>
     <Route path="/catalog" element={<CatalogIndexPage />} />
     <Route
       path="/catalog/:namespace/:kind/:name"
