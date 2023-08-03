@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: T.O.M. Backstage
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: T.O.M.
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -38,16 +38,39 @@ backend:
     connection: ':memory:'
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
+# see https://backstage.io/docs/auth/ to learn about auth providers
+auth:
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: 
+          $env: AUTH_GITHUB_CLIENT_ID
+        clientSecret:
+          $env: AUTH_GITHUB_CLIENT_SECRET
+      production:
+        clientId:
+          $env: AUTH_GITHUB_CLIENT_ID
+        clientSecret:
+          $env: AUTH_GITHUB_CLIENT_SECRET
+
+
+
 integrations:
-  github:
-    - host: github.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: ${GITHUB_TOKEN}
+  # github:
+  #   - host: github.com
+  #     # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+  #     # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
+  #     token: ${GITHUB_TOKEN}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
+  github:
+  - host: github.com
+    token: ${GITHUB_TOKEN}
+
+
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -80,14 +103,71 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
-auth:
-  # see https://backstage.io/docs/auth/ to learn about auth providers
-  providers: {}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  providers:
+    github:
+      # the provider ID can be any camelCase string
+      providerId:
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
+        filters:
+          branch: 'main' # string
+          repository: '.*' # Regex
+        schedule: # optional; same options as in TaskScheduleDefinition
+          # supports cron, ISO duration, "human duration" as used in code
+          frequency: { minutes: 30 }
+          # supports ISO duration, "human duration" as used in code
+          timeout: { minutes: 3 }
+      customProviderId:
+        organization: 'new-org' # string
+        catalogPath: '/custom/path/catalog-info.yaml' # string
+        filters: # optional filters
+          branch: 'develop' # optional string
+          repository: '.*' # optional Regex
+      wildcardProviderId:
+        organization: 'new-org' # string
+        catalogPath: '/groups/**/*.yaml' # this will search all folders for files that end in .yaml
+        filters: # optional filters
+          branch: 'develop' # optional string
+          repository: '.*' # optional Regex
+      topicProviderId:
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
+        filters:
+          branch: 'main' # string
+          repository: '.*' # Regex
+          topic: 'backstage-exclude' # optional string
+      topicFilterProviderId:
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
+        filters:
+          branch: 'main' # string
+          repository: '.*' # Regex
+          topic:
+            include: ['backstage-include'] # optional array of strings
+            exclude: ['experiments'] # optional array of strings
+      validateLocationsExist:
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
+        filters:
+          branch: 'main' # string
+          repository: '.*' # Regex
+        validateLocationsExist: true # optional boolean
+      visibilityProviderId:
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
+        filters:
+          visibility:
+            - public
+            - internal
+      enterpriseProviderId:
+        host: ghe.example.net
+        organization: 'backstage' # string
+        catalogPath: '/catalog-info.yaml' # string
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
