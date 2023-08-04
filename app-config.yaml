@@ -140,7 +140,7 @@ catalog:
         filters:
           branch: 'main' # string
           repository: '.*' # Regex
-          topic: 'backstage-exclude' # optional string
+          topic: # optional string
       topicFilterProviderId:
         organization: 'backstage' # string
         catalogPath: '/catalog-info.yaml' # string
@@ -164,10 +164,10 @@ catalog:
           visibility:
             - public
             - internal
-      enterpriseProviderId:
-        host: ghe.example.net
-        organization: 'backstage' # string
-        catalogPath: '/catalog-info.yaml' # string
+      # enterpriseProviderId:
+      #   host: ghe.example.net
+      #   organization: 'backstage' # string
+      #   catalogPath: '/catalog-info.yaml' # string
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
