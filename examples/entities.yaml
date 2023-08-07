@@ -13,8 +13,8 @@ kind: Component
 metadata:
   name: example-website11
   description: An example website.
-  annotations:
-    backstage.io/techdocs-ref: dir:../mkdocs.yml
+  # annotations:
+  # backstage.io/techdocs-ref: dir:../mkdocs.yml
 spec:
   type: website
   lifecycle: experimental
