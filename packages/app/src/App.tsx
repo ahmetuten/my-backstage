@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -15,6 +15,7 @@ import { orgPlugin } from '@backstage/plugin-org';
 import { SearchPage } from '@backstage/plugin-search';
 import { TechRadarPage } from '@backstage/plugin-tech-radar';
 import {
+  DefaultTechDocsHome,
   TechDocsIndexPage,
   techdocsPlugin,
   TechDocsReaderPage,
@@ -26,7 +27,6 @@ import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
 import { Root } from './components/Root';
-
 import {
   AlertDisplay,
   OAuthRequestDialog,
@@ -63,6 +63,11 @@ export const createCustomThemeOverrides = (
     BackstageSidebar: {
       drawer: {
         backgroundColor: purple,
+      },
+    },
+    BackstageSidebarItem: {
+      root: {
+        color: 'white',
       },
     },
   };
@@ -132,6 +137,7 @@ const app = createApp({
             apiRef: githubAuthApiRef,
           },
         ]}
+        align="center"
       />
     ),
   },
@@ -149,15 +155,16 @@ const routes = (
     >
       {entityPage}
     </Route>
-    <Route path="/docs" element={<TechDocsIndexPage />} />
+    <Route path="/docs" element={<TechDocsIndexPage />}>
+      <DefaultTechDocsHome />
+    </Route>
     <Route
       path="/docs/:namespace/:kind/:name/*"
       element={<TechDocsReaderPage />}
-    >
-      <TechDocsAddons>
-        <ReportIssue />
-      </TechDocsAddons>
-    </Route>
+    />
+    <TechDocsAddons>
+      <ReportIssue />
+    </TechDocsAddons>
     <Route path="/create" element={<ScaffolderPage />} />
     <Route path="/api-docs" element={<ApiExplorerPage />} />
     <Route

@@ -5,7 +5,7 @@
     "plugins/*/src",
     "plugins/*/dev",
     "plugins/*/migrations"
-  ],
+, "packages/app/src/components/home/JiraOverview.jsx", "packages/app/src/jira-plugin"  ],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist-types",

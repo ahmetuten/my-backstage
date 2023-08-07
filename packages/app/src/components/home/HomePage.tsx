@@ -2,31 +2,16 @@ import {
   HomePageToolkit,
   HomePageCompanyLogo,
   HomePageStarredEntities,
-  TemplateBackstageLogoIcon,
 } from '@backstage/plugin-home';
-import { wrapInTestApp, TestApiProvider } from '@backstage/test-utils';
-import { Content, Page, InfoCard } from '@backstage/core-components';
-import {
-  starredEntitiesApiRef,
-  MockStarredEntitiesApi,
-  entityRouteRef,
-  catalogApiRef,
-} from '@backstage/plugin-catalog-react';
-import { configApiRef } from '@backstage/core-plugin-api';
-import { ConfigReader } from '@backstage/config';
-import { HomePageSearchBar, searchPlugin } from '@backstage/plugin-search';
-import {
-  searchApiRef,
-  SearchContextProvider,
-} from '@backstage/plugin-search-react';
-import {
-  stackOverflowApiRef,
-  HomePageStackOverflowQuestions,
-} from '@backstage/plugin-stack-overflow';
+import { Content, Page } from '@backstage/core-components';
+import { MockStarredEntitiesApi } from '@backstage/plugin-catalog-react';
+import { HomePageSearchBar } from '@backstage/plugin-search';
+import { SearchContextProvider } from '@backstage/plugin-search-react';
 import { Grid, makeStyles } from '@material-ui/core';
-import React, { ComponentType, PropsWithChildren } from 'react';
+import React from 'react';
 import TomPayLogo from './TomPayLogo';
 import ToolkitTempIcon from './ToolkitTempIcon';
+import JiraOverview from './JiraOverview';
 
 const entities = [
   {
@@ -63,71 +48,11 @@ const entities = [
   },
 ];
 
-const mockCatalogApi = {
-  getEntities: async () => ({ items: entities }),
-};
-
-const mockStackOverflowApi = {
-  listQuestions: async () => [
-    {
-      title: 'Customizing Spotify backstage UI',
-      link: 'stackoverflow.question/1',
-      answer_count: 0,
-      tags: ['backstage'],
-      owner: { 'some owner': 'name' },
-    },
-    {
-      title: 'Customizing Spotify backstage UI',
-      link: 'stackoverflow.question/1',
-      answer_count: 0,
-      tags: ['backstage'],
-      owner: { 'some owner': 'name' },
-    },
-  ],
-};
-
 const starredEntitiesApi = new MockStarredEntitiesApi();
 starredEntitiesApi.toggleStarred('component:default/example-starred-entity');
 starredEntitiesApi.toggleStarred('component:default/example-starred-entity-2');
 starredEntitiesApi.toggleStarred('component:default/example-starred-entity-3');
 starredEntitiesApi.toggleStarred('component:default/example-starred-entity-4');
-
-// s.overflow mock api
-
-// export default {
-//   title: 'Plugins/Home/Templates',
-//   decorators: [
-//     (Story: ComponentType<PropsWithChildren<{}>>) =>
-//       wrapInTestApp(
-//         <>
-//           <TestApiProvider
-//             apis={[
-//               [stackOverflowApiRef, mockStackOverflowApi],
-//               [catalogApiRef, mockCatalogApi],
-//               [starredEntitiesApiRef, starredEntitiesApi],
-//               [searchApiRef, { query: () => Promise.resolve({ results: [] }) }],
-//               [
-//                 configApiRef,
-//                 new ConfigReader({
-//                   stackoverflow: {
-//                     baseUrl: 'https://api.stackexchange.com/2.2',
-//                   },
-//                 }),
-//               ],
-//             ]}
-//           >
-//             <Story />
-//           </TestApiProvider>
-//         </>,
-//         {
-//           mountedRoutes: {
-//             '/hello-company': searchPlugin.routes.root,
-//             '/catalog/:namespace/:kind/:name': entityRouteRef,
-//           },
-//         },
-//       ),
-//   ],
-// };
 
 // anasayfa search bar style'ı
 const useStyles = makeStyles(theme => ({
@@ -195,15 +120,8 @@ export const HomePageTemplate = () => {
               </Grid>
               {/* Toolkit End */}
 
-              <Grid item xs={12} md={6}>
-                {/* <HomePageStackOverflowQuestions
-                  requestParams={{
-                    tagged: 'backstage',
-                    site: 'stackoverflow',
-                    pagesize: 5,
-                  }}
-                /> */}
-              </Grid>
+              <Grid item xs={12} md={6}></Grid>
+              {/* <JiraOverview /> */}
             </Grid>
           </Grid>
         </Content>

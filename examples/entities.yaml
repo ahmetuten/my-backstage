@@ -11,11 +11,14 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-website
+  name: example-website11
+  description: An example website.
+  annotations:
+    backstage.io/techdocs-ref: dir:../mkdocs.yml
 spec:
   type: website
   lifecycle: experimental
-  owner: guests
+  owner: ahmet
   system: examples
   providesApis: [example-grpc-api]
 ---
