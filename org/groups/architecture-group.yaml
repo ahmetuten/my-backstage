@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: architecture
+  description: TOM Architecture group
+spec:
+  type: sub-department
+  profile:
+    displayName: Architecture
+    email: architecture@tompay.com.tr
+    picture: https://avatars.dicebear.com/api/identicon/backstage@example.com.svg?background=%23fff&margin=25
+  parent: tom-it-dept
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ahmet.tuten
+spec:
+  profile:
+    # Intentional no displayName for testing
+    email: ahmetutku.tuten@tompay.com.tr
+    picture: https://avatars.dicebear.com/api/avataaars/breanna-davison@example.com.svg?background=%23fff
+  memberOf: [architecture]

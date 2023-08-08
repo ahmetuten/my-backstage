@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: tom-it-dept
+  description: T.O.M. IT Department group
+  links:
+    -url: https://www.tompay.com.tr/
+    title: website
+spec:
+  type: organization
+  profile:
+    displayName: T.O.M. IT Department
+    email: tom@tompay.com.tr
+    picture: https://avatars.dicebear.com/api/identicon/info@example.com.svg?background=%23fff&margin=25
+  children: [architecture, devops, support]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: TOM Groups
+  description: TOM Groups
+spec:
+  targets: -./architecture-group.yaml
+    -./devops-group.yaml
+    -./support-group.yaml

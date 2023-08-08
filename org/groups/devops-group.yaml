@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: devops
+  description: TOM DevOps group
+spec:
+  type: sub-department
+  profile:
+    displayName: DevOps
+    email: devops@tompay.com.tr
+    picture: https://avatars.dicebear.com/api/identicon/backstage@example.com.svg?background=%23fff&margin=25
+  parent: tom-it-dept
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: mehmet.tutmeyen
+spec:
+  profile:
+    # Intentional no displayName for testing
+    email: mehmet.tutmeyen@tompay.com.tr
+    picture: https://avatars.dicebear.com/api/avataaars/breanna-davison@example.com.svg?background=%23fff
+  memberOf: [devops]
