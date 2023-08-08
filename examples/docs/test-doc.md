@@ -5,6 +5,7 @@ diff --git a/src/components/CallToAction/EmailCaptureForm.js b/src/components/Ca
 +++ b/src/components/CallToAction/EmailCaptureForm.js
 @@ -56,7 +56,7 @@
 
+```console
 const EmailCaptureForm = ({
 <Button
 text={buttonText}
@@ -16,3 +17,4 @@ disabled={disabled}
              id={buttonId}
              fullWidth
              color="primary"
+```

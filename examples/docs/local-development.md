@@ -3,5 +3,7 @@ First add some secrets to the .env file in the root. See the .env.sample file fo
 
 Then run the software locally like this:
 
+```console
 yarn start
 curl :3000/
+```
