@@ -11,9 +11,7 @@ import { CardHeader, Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import TomPayLogo from './TomPayLogo';
 import ToolkitTempIcon from './ToolkitTempIcon';
-import JiraOverview from './JiraOverview';
-import JiraDeneme from './jira-overview/JiraDeneme';
-import MediaCard from './jira-overview/MediaCard';
+import './home-page.css';
 
 const entities = [
   {
@@ -123,8 +121,8 @@ export const HomePageTemplate = () => {
               {/* Toolkit End */}
 
               <Grid item xs={12} md={6}>
-                <JiraOverview />
-                <MediaCard />
+                {/* <JiraOverview /> */}
+                {/* <MediaCard /> */}
               </Grid>
             </Grid>
           </Grid>

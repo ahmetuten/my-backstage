@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react';
-import { getIssues } from '../../jira-plugin/get-issues';
+// import { getIssues } from '../../jira-plugin/get-issues';
 
 const JiraOverview = () => {
   const [issues, setIssues] = useState([0, 0, 0]);
-
+  console.log('hi');
   useEffect(() => {
     async function logMovies() {
       const response = await fetch(
         'https://ahmetuten.atlassian.net/rest/api/2/search',
         {
-          Authorization:
-            'Bearer ' +
-            'ATOAntqOT4qg1YnJWgTMe4rle54AyWlwKni4b_cXMJNDs8dbCN-SlUt0Ki-joPQf0DtP62A80D94',
+          mode: 'cors',
         },
       );
       console.log('response:', response);
-
+      if (!response.ok) {
+        console.error('Fetch error:', response.status, response.statusText);
+        return;
+      }
       const movies = await response.json();
       console.log('movies: ', movies);
     }
