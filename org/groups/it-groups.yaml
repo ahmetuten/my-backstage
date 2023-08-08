@@ -4,8 +4,8 @@ metadata:
   name: tom-it-dept
   description: T.O.M. IT Department group
   links:
-    -url: https://www.tompay.com.tr/
-    title: website
+    - url: https://www.tompay.com.tr/
+      title: website
 spec:
   type: organization
   profile:
@@ -17,9 +17,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: TOM Groups
+  name: TOMGroups
   description: TOM Groups
 spec:
-  targets: -./architecture-group.yaml
-    -./devops-group.yaml
-    -./support-group.yaml
+  targets:
+    - ./architecture-group.yaml
+    - ./devops-group.yaml
+    - ./support-group.yaml

@@ -13,13 +13,12 @@ kind: Component
 metadata:
   name: example-website11
   description: An example website.
-  metadata:
-    annotations:
-      backstage.io/techdocs-ref: dir:./docs
+  annotations:
+    backstage.io/techdocs-ref: dir:./docs
 spec:
   type: website
   lifecycle: experimental
-  owner: ahmet
+  owner: architecture
   system: examples
   providesApis: [example-grpc-api]
 ---
