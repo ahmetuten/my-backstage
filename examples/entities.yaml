@@ -14,7 +14,7 @@ metadata:
   name: example-website11
   description: An example website.
   annotations:
-    backstage.io/techdocs-ref: dir:./docs
+    backstage.io/techdocs-ref: dir:./examples/docs/mkdocs.yml
 spec:
   type: website
   lifecycle: experimental
