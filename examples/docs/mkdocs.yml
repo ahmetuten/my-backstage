@@ -1,4 +1,14 @@
 site_name: Documentation Site
+repo_url: url:https://github.com/ahmetuten/my-backstage
+edit_uri: edit/main/docs
+
+# docs'un içindeki nav
+nav:
+  - Home: index.md
+  - Local Development: local-development.md
+  - test: test-doc.md
+
 docs_dir: docs
+
 plugins:
   - techdocs-core
