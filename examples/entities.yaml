@@ -11,16 +11,20 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-website11
-  description: An example website.
+  name: example-website-with-docs
+  description: An example website with docs.
+  tags:
+    - docs
   annotations:
-    backstage.io/techdocs-ref: dir:./examples/docs/mkdocs.yml
+    backstage.io/techdocs-ref: dir:.
+    backstage.io/source-location: url:https://github.com/ahmetuten/my-backstage/blob/master/examples/entities.yaml
+
 spec:
   type: website
   lifecycle: experimental
   owner: architecture
-  system: examples
   providesApis: [example-grpc-api]
+  partOf: [spotify]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
