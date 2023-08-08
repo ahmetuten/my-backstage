@@ -7,11 +7,13 @@ import { Content, Page } from '@backstage/core-components';
 import { MockStarredEntitiesApi } from '@backstage/plugin-catalog-react';
 import { HomePageSearchBar } from '@backstage/plugin-search';
 import { SearchContextProvider } from '@backstage/plugin-search-react';
-import { Grid, makeStyles } from '@material-ui/core';
+import { CardHeader, Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import TomPayLogo from './TomPayLogo';
 import ToolkitTempIcon from './ToolkitTempIcon';
 import JiraOverview from './JiraOverview';
+import JiraDeneme from './jira-overview/JiraDeneme';
+import MediaCard from './jira-overview/MediaCard';
 
 const entities = [
   {
@@ -120,8 +122,10 @@ export const HomePageTemplate = () => {
               </Grid>
               {/* Toolkit End */}
 
-              <Grid item xs={12} md={6}></Grid>
-              {/* <JiraOverview /> */}
+              <Grid item xs={12} md={6}>
+                <JiraOverview />
+                <MediaCard />
+              </Grid>
             </Grid>
           </Grid>
         </Content>
