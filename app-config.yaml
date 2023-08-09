@@ -99,6 +99,14 @@ techdocs:
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
+  defaultAuthor:
+    name: 'ahmet'
+    email: 'ahmetuten@gmail.com'
+  defaultCommitMessage: 'init'
+  steps:
+    - id: publish
+      input:
+        repoVisibility: private
 
 catalog:
   providers:
@@ -198,3 +206,8 @@ catalog:
       target: ../../org/org.yaml
       rules:
         - allow: [User, Group]
+
+    - type: file
+      target: ../../examples/template/template-2.yaml
+      rules:
+        - allow: [Template]

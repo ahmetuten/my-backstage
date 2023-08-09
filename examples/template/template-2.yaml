@@ -1,30 +1,37 @@
+# Notice the v1beta3 version
 apiVersion: scaffolder.backstage.io/v1beta3
-# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-template
 kind: Template
+# some metadata about the template itself
 metadata:
-  name: example-nodejs-template
-  title: Example Node.js Template
-  description: An example template for the scaffolder that creates a simple Node.js service
-  tags: [recommended]
+  name: v1beta3-demo
+  title: Test Action template
+  description: scaffolder v1beta3 template demo
 spec:
-  owner: user:guest
+  owner: backstage/techdocs-core
   type: service
 
-  # These parameters are used to generate the input form in the frontend, and are
-  # used to gather input data for the execution of the template.
+  # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in some steps # 1. adımın başlığı
+    - title: Fill in some steps
       required:
         - name
       properties:
         name:
-          title: Name # inputa tıklandığında üstte çıkan input başlığı
+          title: Name
           type: string
-          description: Unique name of the component # inputa tıklandığında altta çıkan açıklama yazısı
+          description: Unique name of the component
           ui:autofocus: true
           ui:options:
             rows: 5
-    - title: Choose a location # 2. adımın başlığı
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            catalogFilter:
+              kind: Group
+    - title: Choose a location
       required:
         - repoUrl
       properties:
@@ -35,22 +42,25 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-              - bitbucket.org
 
-  # These steps are executed in the scaffolder backend, using data that we gathered
-  # via the parameters above.
+  # here's the steps that are executed in series in the scaffolder backend
   steps:
-    # Each step executes an action, in this case one templates files into the working directory.
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./content
+        url: ./template
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
 
-    # This step publishes the contents of the working directory to GitHub.
+    - id: fetch-docs
+      name: Fetch Docs
+      action: fetch:plain
+      input:
+        targetPath: ./community
+        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
+
     - id: publish
       name: Publish
       action: publish:github
@@ -58,10 +68,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        repoVisibility: private
-        defaultCommitMessage: 'ahhshshaha'
 
-    # The final step is to register our new component in the catalog.
     - id: register
       name: Register
       action: catalog:register
@@ -69,7 +76,7 @@ spec:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
 
-  # Outputs are displayed to the user after a successful execution of the template.
+  # some outputs which are saved along with the job for use in the frontend
   output:
     links:
       - title: Repository

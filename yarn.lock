@@ -10509,7 +10509,12 @@ cssom@~0.3.6:
   resolved "https://registry.npmjs.org/cssom/-/cssom-0.3.8.tgz"
   integrity sha512-b0tGHbfegbhPJpxpiBPU2sCkigAqtM9O121le6bbOlgyV+NyGyCmVfJ6QW9eRjz8CpNfWEOYBIMIGRYkLwsIYg==
 
-cssstyle@^2.3.0:
+cssom@0.2.x:
+  version "0.2.5"
+  resolved "https://registry.npmjs.org/cssom/-/cssom-0.2.5.tgz"
+  integrity sha512-b9ecqKEfWrNcyzx5+1nmcfi80fPp8dVM8rlAh7fFK14PZbNjp++gRjyZTZfLJQa/Lw0qeCJho7WBIl0nw0v6HA==
+
+cssstyle@^2.3.0, cssstyle@>=0.2.3:
   version "2.3.0"
   resolved "https://registry.npmjs.org/cssstyle/-/cssstyle-2.3.0.tgz"
   integrity sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
@@ -13432,6 +13437,11 @@ html-webpack-plugin@^5.3.1:
     pretty-error "^4.0.0"
     tapable "^2.0.0"
 
+htmlparser@1.x:
+  version "1.7.7"
+  resolved "https://registry.npmjs.org/htmlparser/-/htmlparser-1.7.7.tgz"
+  integrity sha512-zpK66ifkT0fauyFh2Mulrq4AqGTucxGtOhZ8OjkbSfcCpkqQEI8qRkY0tSQSJNAQ4HUZkgWaU4fK4EH6SVH9PQ==
+
 htmlparser2@^6.1.0:
   version "6.1.0"
   resolved "https://registry.npmjs.org/htmlparser2/-/htmlparser2-6.1.0.tgz"
@@ -14800,6 +14810,14 @@ joycon@^3.0.1:
   resolved "https://registry.npmjs.org/joycon/-/joycon-3.1.1.tgz"
   integrity sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==
 
+jq@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.npmjs.org/jq/-/jq-1.7.2.tgz"
+  integrity sha512-kWnotlfk7S8HVTzgVlmTjVwhOh2iJCQtx0kZSZwq2+qLIuCD92eslezwWR9a+lPNhe1s43VHFrqQMRB57nq36g==
+  dependencies:
+    jsdom "0.2.x"
+    xmlhttprequest "1.3.x"
+
 js-base64@^3.6.0:
   version "3.7.5"
   resolved "https://registry.npmjs.org/js-base64/-/js-base64-3.7.5.tgz"
@@ -14956,6 +14974,18 @@ jsdom@^20.0.0:
     whatwg-url "^11.0.0"
     ws "^8.11.0"
     xml-name-validator "^4.0.0"
+
+jsdom@0.2.x:
+  version "0.2.19"
+  resolved "https://registry.npmjs.org/jsdom/-/jsdom-0.2.19.tgz"
+  integrity sha512-wN7SnERzYuz0bfuKnHK1Mbjb2/wt86TTS3SoCMy63EjAhhnFYuoBEUNO3QkDvm9zzPt3Fp+BwdeUX9XjtMuGyA==
+  dependencies:
+    cssom "0.2.x"
+    cssstyle ">=0.2.3"
+    htmlparser "1.x"
+    request "2.x"
+  optionalDependencies:
+    contextify "0.1.x"
 
 jsesc@^2.5.1:
   version "2.5.2"
@@ -19792,7 +19822,7 @@ request-progress@^3.0.0:
   dependencies:
     throttleit "^1.0.0"
 
-request@^2.88.0, request@^2.88.2:
+request@^2.88.0, request@^2.88.2, request@2.x:
   version "2.88.2"
   resolved "https://registry.npmjs.org/request/-/request-2.88.2.tgz"
   integrity sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
@@ -22947,6 +22977,11 @@ xmlcreate@^2.0.4:
   resolved "https://registry.npmjs.org/xmlcreate/-/xmlcreate-2.0.4.tgz"
   integrity sha512-nquOebG4sngPmGPICTS5EnxqhKbCmz5Ox5hsszI2T6U5qdrJizBc+0ilYSEjTSzU0yZcmvppztXe/5Al5fUwdg==
 
+xmlhttprequest@1.3.x:
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/xmlhttprequest/-/xmlhttprequest-1.3.0.tgz"
+  integrity sha512-Ul4hDMW1hOOQsMMJ9jBiAzQ0GUcozhT2O+7bNj+SyJRzz+AxWb3a34zbJGBZ7/G/+ncsdZkG+IRaLxHHa+jQXQ==
+
 xpath@0.0.32:
   version "0.0.32"
   resolved "https://registry.npmjs.org/xpath/-/xpath-0.0.32.tgz"
@@ -23073,6 +23108,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+yq@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/yq/-/yq-0.0.1.tgz"
+  integrity sha512-COvAm2Oc/W0kjvtyWVkThG4V6MPrMUhCRfO5XrzvojAn3Xb5/YRrMBbF3DrxRo/1o8TySMn2ZGLyt1fLj/TuLw==
 
 yup@^0.32.9:
   version "0.32.11"

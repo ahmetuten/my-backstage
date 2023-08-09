@@ -16,14 +16,14 @@ export default async function createPlugin(
   const searchEngine = new LunrSearchEngine({
     logger: env.logger,
   });
-  const indexBuilder = new IndexBuilder({
+  const indexBuilder = new IndexBuilder({ // write stream
     logger: env.logger,
     searchEngine,
   });
 
   const schedule = env.scheduler.createScheduledTaskRunner({
-    frequency: { minutes: 10 },
-    timeout: { minutes: 15 },
+    frequency: { minutes: 5 }, // 5 dkda bir taskı çalıştır
+    timeout: { minutes: 15 }, // çalışması 15 dkdan fazla sürerse taskı sonlandır
     // A 3 second delay gives the backend server a chance to initialize before
     // any collators are executed, which may attempt requests against the API.
     initialDelay: { seconds: 3 },
@@ -31,7 +31,7 @@ export default async function createPlugin(
 
   // Collators are responsible for gathering documents known to plugins. This
   // collator gathers entities from the software catalog.
-  indexBuilder.addCollator({
+  indexBuilder.addCollator({ // read stream
     schedule,
     factory: DefaultCatalogCollatorFactory.fromConfig(env.config, {
       discovery: env.discovery,
@@ -51,7 +51,7 @@ export default async function createPlugin(
 
   // The scheduler controls when documents are gathered from collators and sent
   // to the search engine for indexing.
-  const { scheduler } = await indexBuilder.build();
+  const { scheduler } = await indexBuilder.build(); 
   scheduler.start();
 
   useHotCleanup(module, () => scheduler.stop());

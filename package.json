@@ -52,12 +52,15 @@
     ]
   },
   "dependencies": {
+    "@backstage/plugin-techdocs-backend": "^1.6.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.3",
     "cors": "^2.8.5",
     "graphviz": "^0.0.9",
-    "plantuml": "^0.0.2"
+    "jq": "^1.7.2",
+    "plantuml": "^0.0.2",
+    "yq": "^0.0.1"
   }
 }
