@@ -108,6 +108,19 @@ scaffolder:
       input:
         repoVisibility: private
 
+kubernetes:
+  serviceLocatorMethod:
+    type: multiTenant
+  clusterLocatorMethods:
+    - type: config
+      clusters:
+        - url: $K8S_MINIKUBE_URL
+          name: minikube
+          authProvider: serviceAccount
+          skipTLSVerify: true
+          skipMetricsLookup: true
+          serviceAccountToken: $K8S_MINIKUBE_TOKEN
+
 catalog:
   providers:
     github:
