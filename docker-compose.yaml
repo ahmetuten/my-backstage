@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 157359852
+      K8S_MINIKUBE_URL: $K8S_MINIKUBE_URL
+      K8S_MINIKUBE_TOKEN: $K8S_MINIKUBE_TOKEN
+
+    ports:
+      - '5432:5432'
+
+  adminer:
+    image: adminer
+    restart: always
+    environment:
+      K8S_MINIKUBE_URL: $K8S_MINIKUBE_URL
+      K8S_MINIKUBE_TOKEN: $K8S_MINIKUBE_TOKEN
+    ports:
+      - 8080:8080

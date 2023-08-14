@@ -110,16 +110,25 @@ scaffolder:
 
 kubernetes:
   serviceLocatorMethod:
-    type: multiTenant
+    type: 'multiTenant'
   clusterLocatorMethods:
-    - type: config
+    - type: 'config'
       clusters:
-        - url: $K8S_MINIKUBE_URL
+        - url: http://127.0.0.1:9999
           name: minikube
-          authProvider: serviceAccount
-          skipTLSVerify: true
+          authProvider: 'serviceAccount'
+          skipTLSVerify: false
           skipMetricsLookup: true
           serviceAccountToken: $K8S_MINIKUBE_TOKEN
+          dashboardUrl: http://127.0.0.1:64713 # url copied from running the command: minikube service kubernetes-dashboard -n kubernetes-dashboard
+          dashboardApp: standard
+          customResources:
+            - group: 'argoproj.io'
+              apiVersion: 'v1alpha1'
+              plural: 'rollouts'
+      skipTLSVerify: true
+      skipMetricsLookup: true
+      exposeDashboard: true
 
 catalog:
   providers:
