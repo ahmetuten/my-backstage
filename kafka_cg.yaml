@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mobile_consumer
+  annotations:
+    kafka.apache.org/consumer-groups: ahmet-cluster/mobile_encoder_consumer_group
+spec:
+  type: service
+  lifecycle: experimental
+  owner: architecture

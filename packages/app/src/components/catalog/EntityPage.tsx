@@ -1,4 +1,5 @@
 import React from 'react';
+import { EntityKafkaContent } from '@backstage/plugin-kafka';
 import { Button, Grid } from '@material-ui/core';
 import {
   EntityApiDefinitionCard,
@@ -166,6 +167,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/ci-cd" title="CI/CD">
       {cicdContent}
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/kafka" title="Kafka">
+      <EntityKafkaContent />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/kubernetes" title="Kubernetes">

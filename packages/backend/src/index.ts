@@ -5,7 +5,7 @@
  *
  * Happy hacking!
  */
-
+import kafka from './plugins/kafka';
 import Router from 'express-promise-router';
 import {
   createServiceBuilder,
@@ -87,6 +87,7 @@ async function main() {
   const searchEnv = useHotMemoize(module, () => createEnv('search'));
   const appEnv = useHotMemoize(module, () => createEnv('app'));
   const kubernetesEnv = useHotMemoize(module, () => createEnv('kubernetes'));
+  const kafkaEnv = useHotMemoize(module, () => createEnv('kafka'));
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -96,6 +97,7 @@ async function main() {
   apiRouter.use('/proxy', await proxy(proxyEnv));
   apiRouter.use('/search', await search(searchEnv));
   apiRouter.use('/kubernetes', await kubernetes(kubernetesEnv));
+  apiRouter.use('/kafka', await kafka(kafkaEnv));
 
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback

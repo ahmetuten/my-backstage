@@ -129,6 +129,14 @@ kubernetes:
       skipMetricsLookup: true
       exposeDashboard: true
 
+kafka:
+  clientId: backstage
+  clusters:
+    - name: ahmet-cluster
+      dashboardUrl: https://localhost:9000
+      brokers:
+        - localhost:9092
+
 catalog:
   providers:
     github:
@@ -210,6 +218,11 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
+
+    - type: file
+      target: ../../kafka_cg.yaml
+      rules:
+        - allow: [Component]
 
     ## Uncomment these lines to add more example data
     - type: url
