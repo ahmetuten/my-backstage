@@ -1,10 +1,3 @@
-# [Backstage](https://backstage.io)
+Custom instance of Backstage app.
 
-This is your newly scaffolded Backstage App, Good Luck!
-
-To start the app, run:
-
-```sh
-yarn install
-yarn dev
-```
+backstage.io
