@@ -63,6 +63,7 @@ import {
   isJiraAvailable,
 } from '@roadiehq/backstage-plugin-jira';
 import { EntityKubernetesContent } from '@backstage/plugin-kubernetes';
+import { EntityMyPluginContent } from '@internal/plugin-my-plugin';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -171,6 +172,10 @@ const serviceEntityPage = (
 
     <EntityLayout.Route path="/kafka" title="Kafka">
       <EntityKafkaContent />
+    </EntityLayout.Route>
+
+    <EntityLayout.Route path="/my-plugin" title="My Plugin">
+      <EntityMyPluginContent />
     </EntityLayout.Route>
 
     <EntityLayout.Route path="/kubernetes" title="Kubernetes">
