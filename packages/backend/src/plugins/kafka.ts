@@ -1,4 +1,4 @@
-import { createRouter } from '@backstage/plugin-kafka-backend';
+import { createRouter } from '@internal/plugin-kafka-api-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 
@@ -7,6 +7,5 @@ export default async function createPlugin(
 ): Promise<Router> {
   return await createRouter({
     logger: env.logger,
-    config: env.config,
   });
 }
