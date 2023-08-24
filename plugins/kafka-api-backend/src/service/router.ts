@@ -15,9 +15,9 @@ export async function createRouter(
   const router = Router();
   router.use(express.json());
 
-  router.get('/health', (_, response) => {
+  router.get('/health', (_, response) => { // endpoint olusturuluyor
     logger.info('PONG!');
-    response.json({ status: 'ok' });
+    response.json({ status: 'ok' }); // dönecek olan response
   });
   router.use(errorHandler());
   return router;
