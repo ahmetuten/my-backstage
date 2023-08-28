@@ -63,6 +63,7 @@
     "graphviz": "^0.0.9",
     "isolated-vm": "^4.6.0",
     "jq": "^1.7.2",
+    "kafkajs": "^2.2.4",
     "node-gyp-install": "^2.2.0",
     "plantuml": "^0.0.2",
     "webpack": "^5.0.0",
