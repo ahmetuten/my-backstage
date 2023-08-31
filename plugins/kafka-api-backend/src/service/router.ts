@@ -16,43 +16,48 @@ export async function createRouter(
   const router = Router();
   router.use(express.json());
 
-  router.get('/health', async (req, res) => {
+  const addKafkaTopic = async (
+    topicName: string, 
+    topicIp: string, 
+    topicPort: string
+    ) => {
+    console.log(`ip: ${topicIp} port: ${topicPort} topic ${topicName}`);
+
+    const kafka = new Kafka ({
+      clientId: 'mycliend',
+      brokers: [`${topicIp}:${topicPort}`]
+    });
+
+    const admin = kafka.admin();
+    await admin.connect();
+    admin.createTopics({
+      topics: [{
+        topic: topicName,
+        numPartitions: 1,
+        replicationFactor: 1
+      }]
+    });
+
+    return await admin.disconnect();
+  };
+
+  router.get('/health', async (_req, _res) => {
     logger.info('PONG!');
-    
-    const { topicName } = req.query; // Burada query parametresinden topic adını alıyoruz
+    console.log('ALIVEEEE')
 
-    if (!topicName) {
-      return res.status(400).json({ error: 'Missing topicName in query parameters' });
-    }
-
-    try {
-      const kafka = new Kafka({
-          clientId: 'kafka_pub_sub_client',
-          brokers: ["192.168.1.100:9092"]
-      });
-
-      const admin = kafka.admin();
-      logger.info("Broker'a bağlanılıyor...")
-      await admin.connect();
-      logger.info("Broker'a bağlanıldı, topic oluşturulacak...")
-      await admin.createTopics({
-          topics: [
-              {
-                  topic: `${topicName}`,
-                  numPartitions: 1
-              }
-          ]
-      })
-      logger.info("topic oluşturuldu");
-      response.json(({status: "ok"}))
-      await admin.disconnect();
-      } catch (error) {
-        logger.info("bir hata oluştu", error)
-      }finally {
-          process.exit(0);
-      }
-  
   });
+
+  router.post('/postkafka', async(req, res) => {
+    console.log('add called!');
+    await addKafkaTopic(
+      req.body.topicName, 
+      req.body.topicIp, 
+      req.body.topicPort
+      );
+    console.log('func worked!')
+    return res.end();
+  })
+
   router.use(errorHandler());
   return router;
 }
