@@ -4,6 +4,7 @@ import Router from 'express-promise-router';
 import { Logger } from 'winston';
 import { Kafka } from 'kafkajs';
 import { Knex } from 'knex';
+import { ServersContext } from './serversContextBuilder';
 
 const kafkaTable = 'kafka_table';
 
@@ -12,7 +13,7 @@ export interface RouterOptions {
 }
 
 export async function createRouter(
-  options: RouterOptions,
+  options: ServersContext,
 ): Promise<express.Router> {
   const { logger } = options;
 

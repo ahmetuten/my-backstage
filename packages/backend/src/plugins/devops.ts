@@ -1,10 +1,10 @@
 import {
-    buildServersContext,
     createRouter,
   } from '@internal/plugin-kafka-api-backend';
   import { Router } from 'express';
 
   import { PluginEnvironment } from '../types';
+import { buildServersContext } from '@internal/plugin-kafka-api-backend/src/service/serversContextBuilder';
   
   export default async function createPlugin({
     logger,

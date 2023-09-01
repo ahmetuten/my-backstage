@@ -33,6 +33,14 @@ export type KafkaModel = { // Skeleton for Kafka
     adminPassword: string
 };
 
+export type ServerModel = {
+    id: string
+    name: string
+    operatingSystem: string
+    tags: string[]
+    cpu: string
+};
+
 export type KafkaTopicModel = { // Skeleton for topic
     name: string
 };
