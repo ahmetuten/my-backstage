@@ -1908,6 +1908,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@babel/runtime@^7.11.1":
+  version "7.22.11"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.11.tgz#7a9ba3bbe406ad6f9e8dd4da2ece453eb23a77a4"
+  integrity sha512-ee7jVNlWN09+KftVOu9n7S8gQzD/Z6hN/I8VBRXW4P1+Xe7kJGXMwu8vds4aGIMHZnNbdpSWCfZZtinytpcAvA==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.22.5", "@babel/template@^7.3.3":
   version "7.22.5"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.22.5.tgz"
@@ -1990,6 +1997,106 @@
     stoppable "^1.1.0"
     winston "^3.2.1"
     winston-transport "^4.5.0"
+
+"@backstage/backend-app-api@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-app-api/-/backend-app-api-0.5.2.tgz#a5be3250c34b0813f728f82df4c87e16534cbc1a"
+  integrity sha512-ecJEhPFMaT7IjSMHUvTEKo8Pvjkv35/JbmZRifPy79EAK/7DxSCb6pHekU1e/nnmcvuIWfpguLINbBeqKL5HSg==
+  dependencies:
+    "@backstage/backend-common" "^0.19.4"
+    "@backstage/backend-plugin-api" "^0.6.2"
+    "@backstage/backend-tasks" "^0.5.7"
+    "@backstage/cli-common" "^0.1.12"
+    "@backstage/cli-node" "^0.1.3"
+    "@backstage/config" "^1.0.8"
+    "@backstage/config-loader" "^1.4.0"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/plugin-auth-node" "^0.2.19"
+    "@backstage/plugin-permission-node" "^0.7.13"
+    "@backstage/types" "^1.1.0"
+    "@manypkg/get-packages" "^1.1.3"
+    "@types/cors" "^2.8.6"
+    "@types/express" "^4.17.6"
+    compression "^1.7.4"
+    cors "^2.8.5"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    fs-extra "10.1.0"
+    helmet "^6.0.0"
+    lodash "^4.17.21"
+    logform "^2.3.2"
+    minimatch "^5.0.0"
+    minimist "^1.2.5"
+    morgan "^1.10.0"
+    node-forge "^1.3.1"
+    selfsigned "^2.0.0"
+    stoppable "^1.1.0"
+    winston "^3.2.1"
+    winston-transport "^4.5.0"
+
+"@backstage/backend-common@^0.19.0", "@backstage/backend-common@^0.19.4":
+  version "0.19.4"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-common/-/backend-common-0.19.4.tgz#c27fb52ed69c9b28d9db85318cc6b5d161ba2322"
+  integrity sha512-D0pXpfLVWFSPejsW9OQaebhpV3ujRtVNFlRYPGbcJRq3Q0oebnNCz+9KO/Aunv27oGi7Pl0OYDjY9hpMPH+O4w==
+  dependencies:
+    "@aws-sdk/abort-controller" "^3.347.0"
+    "@aws-sdk/client-s3" "^3.350.0"
+    "@aws-sdk/credential-providers" "^3.350.0"
+    "@aws-sdk/types" "^3.347.0"
+    "@backstage/backend-app-api" "^0.5.2"
+    "@backstage/backend-dev-utils" "^0.1.1"
+    "@backstage/backend-plugin-api" "^0.6.2"
+    "@backstage/cli-common" "^0.1.12"
+    "@backstage/config" "^1.0.8"
+    "@backstage/config-loader" "^1.4.0"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/integration" "^1.6.2"
+    "@backstage/integration-aws-node" "^0.1.5"
+    "@backstage/types" "^1.1.0"
+    "@google-cloud/storage" "^6.0.0"
+    "@keyv/memcache" "^1.3.5"
+    "@keyv/redis" "^2.5.3"
+    "@kubernetes/client-node" "0.18.1"
+    "@manypkg/get-packages" "^1.1.3"
+    "@octokit/rest" "^19.0.3"
+    "@types/cors" "^2.8.6"
+    "@types/dockerode" "^3.3.0"
+    "@types/express" "^4.17.6"
+    "@types/luxon" "^3.0.0"
+    "@types/webpack-env" "^1.15.2"
+    archiver "^5.0.2"
+    base64-stream "^1.0.0"
+    compression "^1.7.4"
+    concat-stream "^2.0.0"
+    cors "^2.8.5"
+    dockerode "^3.3.1"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    fs-extra "10.1.0"
+    git-url-parse "^13.0.0"
+    helmet "^6.0.0"
+    isomorphic-git "^1.23.0"
+    jose "^4.6.0"
+    keyv "^4.5.2"
+    knex "^2.0.0"
+    lodash "^4.17.21"
+    logform "^2.3.2"
+    luxon "^3.0.0"
+    minimatch "^5.0.0"
+    minimist "^1.2.5"
+    morgan "^1.10.0"
+    node-fetch "^2.6.7"
+    node-forge "^1.3.1"
+    pg "^8.3.0"
+    raw-body "^2.4.1"
+    selfsigned "^2.0.0"
+    stoppable "^1.1.0"
+    tar "^6.1.12"
+    uuid "^8.3.2"
+    winston "^3.2.1"
+    winston-transport "^4.5.0"
+    yauzl "^2.10.0"
+    yn "^4.0.0"
 
 "@backstage/backend-common@^0.19.3":
   version "0.19.3"
@@ -2089,12 +2196,44 @@
     express "^4.17.1"
     knex "^2.0.0"
 
+"@backstage/backend-plugin-api@^0.6.2":
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-plugin-api/-/backend-plugin-api-0.6.2.tgz#bf1215d62b31c2bee9e7b51aac4237b7d3d56690"
+  integrity sha512-ViSENG/e4+6/19R0xcEduXc8XjBPpxXzi1FFke4J5NwR+OIOjtMugVnJLWiAfHJNMvUI2Q4Jb2zGouxqbwgBIA==
+  dependencies:
+    "@backstage/backend-tasks" "^0.5.7"
+    "@backstage/config" "^1.0.8"
+    "@backstage/plugin-auth-node" "^0.2.19"
+    "@backstage/plugin-permission-common" "^0.7.7"
+    "@backstage/types" "^1.1.0"
+    "@types/express" "^4.17.6"
+    express "^4.17.1"
+    knex "^2.0.0"
+
 "@backstage/backend-tasks@^0.5.6":
   version "0.5.6"
   resolved "https://registry.npmjs.org/@backstage/backend-tasks/-/backend-tasks-0.5.6.tgz"
   integrity sha512-/ZU16tfoLR0sdCrKv3NkvC/EmEQN5DaPgpjpzE5eGkUACX9vokutzt1Q9pRgtsUyY60Q4CQLihy6A7iF50OQiQ==
   dependencies:
     "@backstage/backend-common" "^0.19.3"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/types" "^1.1.0"
+    "@types/luxon" "^3.0.0"
+    cron "^2.0.0"
+    knex "^2.0.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+    uuid "^8.0.0"
+    winston "^3.2.1"
+    zod "^3.21.4"
+
+"@backstage/backend-tasks@^0.5.7":
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/@backstage/backend-tasks/-/backend-tasks-0.5.7.tgz#49b761bd8906fc4252a806305811e94ab6a21eb3"
+  integrity sha512-ksWvho3zJQz6Xrx/ecLoi4Q4poLncexXKw/Y1aNhsVFbvBtajgGn+atsjSY9vK/GWv9WjFjr7n5zg+3Bm7mW8Q==
+  dependencies:
+    "@backstage/backend-common" "^0.19.4"
     "@backstage/config" "^1.0.8"
     "@backstage/errors" "^1.2.1"
     "@backstage/types" "^1.1.0"
@@ -2261,6 +2400,119 @@
     yn "^4.0.0"
     zod "^3.21.4"
 
+"@backstage/cli@^0.22.8":
+  version "0.22.12"
+  resolved "https://registry.yarnpkg.com/@backstage/cli/-/cli-0.22.12.tgz#7199b3cadfb9748eb95358e39d7bd7d152ecdf5d"
+  integrity sha512-gU7RQvTnrZHbsWTlsMHx+5pBRP4ZRt6wUp8ZQAbS7v1sEt3oPawlglreGv/IWWW/zF7zuJWneAe+RZvgzPC/mA==
+  dependencies:
+    "@backstage/catalog-model" "^1.4.1"
+    "@backstage/cli-common" "^0.1.12"
+    "@backstage/cli-node" "^0.1.3"
+    "@backstage/config" "^1.0.8"
+    "@backstage/config-loader" "^1.4.0"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/eslint-plugin" "^0.1.3"
+    "@backstage/integration" "^1.6.2"
+    "@backstage/release-manifests" "^0.0.9"
+    "@backstage/types" "^1.1.0"
+    "@esbuild-kit/cjs-loader" "^2.4.1"
+    "@manypkg/get-packages" "^1.1.3"
+    "@octokit/graphql" "^5.0.0"
+    "@octokit/graphql-schema" "^13.7.0"
+    "@octokit/oauth-app" "^4.2.0"
+    "@octokit/request" "^6.0.0"
+    "@pmmmwh/react-refresh-webpack-plugin" "^0.5.7"
+    "@rollup/plugin-commonjs" "^23.0.0"
+    "@rollup/plugin-json" "^5.0.0"
+    "@rollup/plugin-node-resolve" "^13.0.6"
+    "@rollup/plugin-yaml" "^4.0.0"
+    "@spotify/eslint-config-base" "^14.0.0"
+    "@spotify/eslint-config-react" "^14.0.0"
+    "@spotify/eslint-config-typescript" "^14.0.0"
+    "@sucrase/webpack-loader" "^2.0.0"
+    "@svgr/core" "6.5.x"
+    "@svgr/plugin-jsx" "6.5.x"
+    "@svgr/plugin-svgo" "6.5.x"
+    "@svgr/rollup" "6.5.x"
+    "@svgr/webpack" "6.5.x"
+    "@swc/core" "^1.3.46"
+    "@swc/helpers" "^0.5.0"
+    "@swc/jest" "^0.2.22"
+    "@types/jest" "^29.0.0"
+    "@types/webpack-env" "^1.15.2"
+    "@typescript-eslint/eslint-plugin" "^5.9.0"
+    "@typescript-eslint/parser" "^5.9.0"
+    "@yarnpkg/lockfile" "^1.1.0"
+    "@yarnpkg/parsers" "^3.0.0-rc.4"
+    bfj "^7.0.2"
+    buffer "^6.0.3"
+    chalk "^4.0.0"
+    chokidar "^3.3.1"
+    commander "^9.1.0"
+    cross-fetch "^3.1.5"
+    cross-spawn "^7.0.3"
+    css-loader "^6.5.1"
+    diff "^5.0.0"
+    esbuild "^0.19.0"
+    esbuild-loader "^2.18.0"
+    eslint "^8.6.0"
+    eslint-config-prettier "^8.3.0"
+    eslint-formatter-friendly "^7.0.0"
+    eslint-plugin-deprecation "^1.3.2"
+    eslint-plugin-import "^2.25.4"
+    eslint-plugin-jest "^27.0.0"
+    eslint-plugin-jsx-a11y "^6.5.1"
+    eslint-plugin-react "^7.28.0"
+    eslint-plugin-react-hooks "^4.3.0"
+    eslint-webpack-plugin "^3.1.1"
+    express "^4.17.1"
+    fork-ts-checker-webpack-plugin "^7.0.0-alpha.8"
+    fs-extra "10.1.0"
+    git-url-parse "^13.0.0"
+    glob "^7.1.7"
+    global-agent "^3.0.0"
+    handlebars "^4.7.3"
+    html-webpack-plugin "^5.3.1"
+    inquirer "^8.2.0"
+    jest "^29.0.2"
+    jest-css-modules "^2.1.0"
+    jest-environment-jsdom "^29.0.2"
+    jest-runtime "^29.0.2"
+    json-schema "^0.4.0"
+    lodash "^4.17.21"
+    mini-css-extract-plugin "^2.4.2"
+    minimatch "^5.1.1"
+    node-fetch "^2.6.7"
+    node-libs-browser "^2.2.1"
+    npm-packlist "^5.0.0"
+    ora "^5.3.0"
+    postcss "^8.1.0"
+    process "^0.11.10"
+    react-dev-utils "^12.0.0-next.60"
+    react-refresh "^0.14.0"
+    recursive-readdir "^2.2.2"
+    replace-in-file "^6.0.0"
+    rollup "^2.60.2"
+    rollup-plugin-dts "^4.0.1"
+    rollup-plugin-esbuild "^4.7.2"
+    rollup-plugin-postcss "^4.0.0"
+    rollup-pluginutils "^2.8.2"
+    run-script-webpack-plugin "^0.1.0"
+    semver "^7.5.3"
+    style-loader "^3.3.1"
+    sucrase "^3.20.2"
+    swc-loader "^0.2.3"
+    tar "^6.1.12"
+    terser-webpack-plugin "^5.1.3"
+    util "^0.12.3"
+    webpack "^5.70.0"
+    webpack-dev-server "^4.7.3"
+    webpack-node-externals "^3.0.0"
+    yaml "^2.0.0"
+    yml-loader "^2.1.0"
+    yn "^4.0.0"
+    zod "^3.21.4"
+
 "@backstage/config-loader@^1.4.0":
   version "1.4.0"
   resolved "https://registry.npmjs.org/@backstage/config-loader/-/config-loader-1.4.0.tgz"
@@ -2292,7 +2544,7 @@
     "@backstage/types" "^1.1.0"
     lodash "^4.17.21"
 
-"@backstage/core-app-api@^1.9.1":
+"@backstage/core-app-api@^1.8.1", "@backstage/core-app-api@^1.9.1":
   version "1.9.1"
   resolved "https://registry.npmjs.org/@backstage/core-app-api/-/core-app-api-1.9.1.tgz"
   integrity sha512-kWoMEAPQFB7fooRnEy4H3PqFB+DedXSPvBmflJkM09HKWIkFrLGH3U+a4plEBCsSrGV5pw9Bs3O1N8YiDCxLyQ==
@@ -2309,7 +2561,7 @@
     zen-observable "^0.10.0"
     zod "^3.21.4"
 
-"@backstage/core-components@^0.13.3", "@backstage/core-components@^0.13.4":
+"@backstage/core-components@^0.13.2", "@backstage/core-components@^0.13.3", "@backstage/core-components@^0.13.4":
   version "0.13.4"
   resolved "https://registry.npmjs.org/@backstage/core-components/-/core-components-0.13.4.tgz"
   integrity sha512-rkiGtAm9JAHHmSEAOzafFfTbBzlOb6Ecu/Ng78fn4H1qig7Vdm7zJ6FwXcnfREMgiSV+xnoOioN7XMyZAfjMgg==
@@ -2356,7 +2608,7 @@
     zen-observable "^0.10.0"
     zod "^3.21.4"
 
-"@backstage/core-plugin-api@^1.5.3":
+"@backstage/core-plugin-api@^1.5.2", "@backstage/core-plugin-api@^1.5.3":
   version "1.5.3"
   resolved "https://registry.npmjs.org/@backstage/core-plugin-api/-/core-plugin-api-1.5.3.tgz"
   integrity sha512-GMqzfpyJkGoZyLOE0zj95kWUE9XC7hNyhiOCW81bq0MsjhoQ8PM4TyuvVi3WhiexC4/zmkZpNjhUKnx1yuhhvg==
@@ -2367,6 +2619,30 @@
     "@types/react" "^16.13.1 || ^17.0.0"
     history "^5.0.0"
     prop-types "^15.7.2"
+    zen-observable "^0.10.0"
+
+"@backstage/dev-utils@^1.0.16":
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/@backstage/dev-utils/-/dev-utils-1.0.20.tgz#a52348a856062123b152a10802f587a128c1192f"
+  integrity sha512-eTW12SFtV6h5WuZWyLCUywJKTtIPd6i7E+q179ZWMU1XEdLSss9dtoXT88EjPL5shZuzusS34r4nRuaJ2xI1gg==
+  dependencies:
+    "@backstage/app-defaults" "^1.4.2"
+    "@backstage/catalog-model" "^1.4.1"
+    "@backstage/core-app-api" "^1.9.1"
+    "@backstage/core-components" "^0.13.4"
+    "@backstage/core-plugin-api" "^1.5.3"
+    "@backstage/integration-react" "^1.1.18"
+    "@backstage/plugin-catalog-react" "^1.8.3"
+    "@backstage/test-utils" "^1.4.2"
+    "@backstage/theme" "^0.4.1"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@testing-library/dom" "^8.0.0"
+    "@testing-library/jest-dom" "^5.10.1"
+    "@testing-library/react" "^12.1.3"
+    "@testing-library/user-event" "^14.0.0"
+    "@types/react" "^16.13.1 || ^17.0.0"
+    react-use "^17.2.4"
     zen-observable "^0.10.0"
 
 "@backstage/dev-utils@^1.0.19":
@@ -2438,10 +2714,40 @@
     "@material-ui/lab" "4.0.0-alpha.61"
     react-use "^17.2.4"
 
+"@backstage/integration-react@^1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@backstage/integration-react/-/integration-react-1.1.18.tgz#116aaf346538d075d2aba385c690921d4424427e"
+  integrity sha512-ncKcpZxNSKohNC5V6An93sL6cFXO58C6nulPOYYm0rVWWTp1gWZYcVnYyZH9n9zGctKB3iJTpE/2RKV3U5EJlA==
+  dependencies:
+    "@backstage/config" "^1.0.8"
+    "@backstage/core-components" "^0.13.4"
+    "@backstage/core-plugin-api" "^1.5.3"
+    "@backstage/integration" "^1.6.2"
+    "@backstage/theme" "^0.4.1"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    react-use "^17.2.4"
+
 "@backstage/integration@^1.6.1":
   version "1.6.1"
   resolved "https://registry.npmjs.org/@backstage/integration/-/integration-1.6.1.tgz"
   integrity sha512-hwDAMIAfNage1GhAST7SoLCDauG2nxZNBk+gWV36rdUm7kd9H5MPUDn/1W+MZV3SWJ689oM0AXmsyWrxQfpqbw==
+  dependencies:
+    "@azure/identity" "^3.2.1"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.1"
+    "@octokit/auth-app" "^4.0.0"
+    "@octokit/rest" "^19.0.3"
+    cross-fetch "^3.1.5"
+    git-url-parse "^13.0.0"
+    lodash "^4.17.21"
+    luxon "^3.0.0"
+
+"@backstage/integration@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@backstage/integration/-/integration-1.6.2.tgz#83e70aea9d78624a2b6c0c4c3a37675752cdbede"
+  integrity sha512-10XNwGmzoLwcsRPieZLoYRXBBYvdkakT+TY5ucNaGw9QwxvlFZxDel1hIPLJIEctV9yFCkf1iw4ufJBiaHNJjQ==
   dependencies:
     "@azure/identity" "^3.2.1"
     "@backstage/config" "^1.0.8"
@@ -2563,6 +2869,20 @@
   integrity sha512-cgl03msNjUt+Hx2E7+XTzq9pqtzhFsFJwjq21U/5eMyWrGKvlRc4Tkd/Lf+41qoN9bXboIFNu2B9apUsXWkQbg==
   dependencies:
     "@backstage/backend-common" "^0.19.3"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.1"
+    "@types/express" "*"
+    express "^4.17.1"
+    jose "^4.6.0"
+    node-fetch "^2.6.7"
+    winston "^3.2.1"
+
+"@backstage/plugin-auth-node@^0.2.19":
+  version "0.2.19"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-auth-node/-/plugin-auth-node-0.2.19.tgz#bae4befc72ad79a4a805a2e847f6d68f75dc0195"
+  integrity sha512-E/GuS0OzcrauE5b4ODKXOT59EEuCaNHSWnBeerXlxoqBaGSVdXodOjpfmcU7sxMHmJvT0W04G4gOR9Jc+VPLEw==
+  dependencies:
+    "@backstage/backend-common" "^0.19.4"
     "@backstage/config" "^1.0.8"
     "@backstage/errors" "^1.2.1"
     "@types/express" "*"
@@ -2726,6 +3046,37 @@
     "@backstage/core-plugin-api" "^1.5.3"
     "@backstage/errors" "^1.2.1"
     "@backstage/integration" "^1.6.1"
+    "@backstage/plugin-catalog-common" "^1.0.15"
+    "@backstage/plugin-permission-common" "^0.7.7"
+    "@backstage/plugin-permission-react" "^0.4.14"
+    "@backstage/theme" "^0.4.1"
+    "@backstage/types" "^1.1.0"
+    "@backstage/version-bridge" "^1.0.4"
+    "@material-ui/core" "^4.12.2"
+    "@material-ui/icons" "^4.9.1"
+    "@material-ui/lab" "4.0.0-alpha.61"
+    "@react-hookz/web" "^23.0.0"
+    "@types/react" "^16.13.1 || ^17.0.0"
+    classnames "^2.2.6"
+    jwt-decode "^3.1.0"
+    lodash "^4.17.21"
+    material-ui-popup-state "^1.9.3"
+    qs "^6.9.4"
+    react-use "^17.2.4"
+    yaml "^2.0.0"
+    zen-observable "^0.10.0"
+
+"@backstage/plugin-catalog-react@^1.8.3":
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-catalog-react/-/plugin-catalog-react-1.8.3.tgz#06103b2707de6d2f2c6e2d1514c3237eb98d1f3e"
+  integrity sha512-rY01QsZvVt87K+pVv1moP1cGUXyYV/1d/XLYb+mAvd5wX81nqZ3WWfn6jQQm4mgLMm/spfl/lt1D3lUgHDvQiQ==
+  dependencies:
+    "@backstage/catalog-client" "^1.4.3"
+    "@backstage/catalog-model" "^1.4.1"
+    "@backstage/core-components" "^0.13.4"
+    "@backstage/core-plugin-api" "^1.5.3"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/integration" "^1.6.2"
     "@backstage/plugin-catalog-common" "^1.0.15"
     "@backstage/plugin-permission-common" "^0.7.7"
     "@backstage/plugin-permission-react" "^0.4.14"
@@ -2989,6 +3340,23 @@
     "@backstage/config" "^1.0.8"
     "@backstage/errors" "^1.2.1"
     "@backstage/plugin-auth-node" "^0.2.18"
+    "@backstage/plugin-permission-common" "^0.7.7"
+    "@types/express" "^4.17.6"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    zod "^3.21.4"
+    zod-to-json-schema "^3.20.4"
+
+"@backstage/plugin-permission-node@^0.7.13":
+  version "0.7.13"
+  resolved "https://registry.yarnpkg.com/@backstage/plugin-permission-node/-/plugin-permission-node-0.7.13.tgz#ac071912ac7608ee695328cf22a7007f8f4418e3"
+  integrity sha512-u7STVvR0IExRzrl4VHhe0iHKnVvSvxtjqwI0hJS+zy2nid9koceCDeDDVzZ+gCY0IBqX470mysbA8yGciMDywA==
+  dependencies:
+    "@backstage/backend-common" "^0.19.4"
+    "@backstage/backend-plugin-api" "^0.6.2"
+    "@backstage/config" "^1.0.8"
+    "@backstage/errors" "^1.2.1"
+    "@backstage/plugin-auth-node" "^0.2.19"
     "@backstage/plugin-permission-common" "^0.7.7"
     "@types/express" "^4.17.6"
     express "^4.17.1"
@@ -3546,7 +3914,7 @@
   dependencies:
     cross-fetch "^3.1.5"
 
-"@backstage/test-utils@^1.4.2":
+"@backstage/test-utils@^1.4.0", "@backstage/test-utils@^1.4.2":
   version "1.4.2"
   resolved "https://registry.npmjs.org/@backstage/test-utils/-/test-utils-1.4.2.tgz"
   integrity sha512-OLke7kgszlRGMCxuiTtBui3+bchcJZK3YUIOBPkLcMxiIKP955YkpicucH7rffqrlGkImttCwUXJlR8uEBZwJg==
@@ -3568,7 +3936,7 @@
     cross-fetch "^3.1.5"
     zen-observable "^0.10.0"
 
-"@backstage/theme@^0.4.1":
+"@backstage/theme@^0.4.0", "@backstage/theme@^0.4.1":
   version "0.4.1"
   resolved "https://registry.npmjs.org/@backstage/theme/-/theme-0.4.1.tgz"
   integrity sha512-WtCh8y3SBOXAqOUKZVgHDyBbz6fxUF4e08o00+EuXHqpYmYJlVfMvTKcPGM2Ngs2bQ2fSi3+XOJeYnnasjs6Qg==
@@ -9073,6 +9441,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/theme" "^0.4.1"
     "@emotion/react" "^11.11.1"
     "@emotion/styled" "^11.11.0"
+    "@internal/plugin-inventory" "^0.1.0"
     "@internal/plugin-my-plugin" "^0.1.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
@@ -10604,15 +10973,15 @@ command-exists@^1.2.9:
   resolved "https://registry.npmjs.org/command-exists/-/command-exists-1.2.9.tgz"
   integrity sha512-LTQ/SGc+s0Xc0Fu5WaKnR0YiygZkm9eKFvyS+fRsU7/ZWFF8ykFM6Pc9aCVf1+xasOOZpO3BAVgVrKvsqKHV7w==
 
+commander@2, commander@^2.19.0, commander@^2.20.0:
+  version "2.20.3"
+  resolved "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
+  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
+
 commander@^10.0.0:
   version "10.0.1"
   resolved "https://registry.npmjs.org/commander/-/commander-10.0.1.tgz"
   integrity sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==
-
-commander@^2.19.0, commander@^2.20.0:
-  version "2.20.3"
-  resolved "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
-  integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
 commander@^4.0.0:
   version "4.1.1"
@@ -11367,6 +11736,11 @@ cypress@^9.7.0:
     untildify "^4.0.0"
     yauzl "^2.10.0"
 
+d3-array@^1.2.0:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-1.2.4.tgz#635ce4d5eea759f6f605863dbcfc30edc737f71f"
+  integrity sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==
+
 "d3-color@1 - 3":
   version "3.1.0"
   resolved "https://registry.npmjs.org/d3-color/-/d3-color-3.1.0.tgz"
@@ -11410,6 +11784,11 @@ d3-path@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmjs.org/d3-path/-/d3-path-3.1.0.tgz"
   integrity sha512-p3KP5HCf/bvjBSSKuXid6Zqijx7wIfNW+J/maPs+iwR35at5JCbLUT0LzF1cnjbCHWhqzQTIN2Jpe8pRebIEFQ==
+
+d3-polygon@^1.0.3:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/d3-polygon/-/d3-polygon-1.0.6.tgz#0bf8cb8180a6dc107f518ddf7975e12abbfbd38e"
+  integrity sha512-k+RF7WvI08PC8reEoXa/w2nSg5AUMTi+peBD9cmFc+0ixHfbs4QmxxkarVal1IkVkgxVuk9JSHhJURHiyHKAuQ==
 
 "d3-quadtree@1 - 3":
   version "3.0.1"
@@ -12032,6 +12411,11 @@ duplexify@^4.0.0:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
     stream-shift "^1.0.0"
+
+earcut@^2.1.1:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/earcut/-/earcut-2.2.4.tgz#6d02fd4d68160c114825d06890a92ecaae60343a"
+  integrity sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==
 
 eastasianwidth@^0.2.0:
   version "0.2.0"
@@ -13263,6 +13647,18 @@ flatted@^3.1.0:
   version "3.2.7"
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
+
+flubber@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/flubber/-/flubber-0.4.2.tgz#14452d4a838cc3b9f2fb6175da94e35acd55fbaa"
+  integrity sha512-79RkJe3rA4nvRCVc2uXjj7U/BAUq84TS3KHn6c0Hr9K64vhj83ZNLUziNx4pJoBumSPhOl5VjH+Z0uhi+eE8Uw==
+  dependencies:
+    d3-array "^1.2.0"
+    d3-polygon "^1.0.3"
+    earcut "^2.1.1"
+    svg-path-properties "^0.2.1"
+    svgpath "^2.2.1"
+    topojson-client "^3.0.0"
 
 fn.name@1.x.x:
   version "1.1.0"
@@ -16194,12 +16590,7 @@ jwt-decode@^3.1.0:
   resolved "https://registry.npmjs.org/jwt-decode/-/jwt-decode-3.1.2.tgz"
   integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
-kafkajs@^2.0.0:
-  version "2.2.4"
-  resolved "https://registry.npmjs.org/kafkajs/-/kafkajs-2.2.4.tgz"
-  integrity sha512-j/YeapB1vfPT2iOIUn/vxdyKEuhuY2PxMBvf5JWux6iSaukAccrMtXEY/Lb7OvavDhOWME589bpLrEdnVHjfjA==
-
-kafkajs@^2.2.4:
+kafkajs@^2.0.0, kafkajs@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/kafkajs/-/kafkajs-2.2.4.tgz#59e6e16459d87fdf8b64be73970ed5aa42370a5b"
   integrity sha512-j/YeapB1vfPT2iOIUn/vxdyKEuhuY2PxMBvf5JWux6iSaukAccrMtXEY/Lb7OvavDhOWME589bpLrEdnVHjfjA==
@@ -20001,6 +20392,13 @@ raf-schd@^4.0.2:
   resolved "https://registry.npmjs.org/raf-schd/-/raf-schd-4.0.3.tgz"
   integrity sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==
 
+raf@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
+  dependencies:
+    performance-now "^2.1.0"
+
 railroad-diagrams@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz"
@@ -20085,6 +20483,15 @@ rc-progress@3.4.2:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.6"
     rc-util "^5.16.1"
+
+rc-tween-one@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/rc-tween-one/-/rc-tween-one-3.0.6.tgz#74e09cdd9da00c27082c8b6f1606dc3bae67797b"
+  integrity sha512-5zTSXyyv7bahDBQ/kJw/kNxxoBqTouttoelw8FOVOyWqmTMndizJEpvaj1N+yES5Xjss6Y2iVw+9vSJQZE8Z6g==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    style-utils "^0.3.4"
+    tween-one "^1.0.50"
 
 rc-util@^5.16.1:
   version "5.36.0"
@@ -22193,6 +22600,11 @@ style-to-object@^0.4.0:
   dependencies:
     inline-style-parser "0.1.1"
 
+style-utils@^0.3.4, style-utils@^0.3.6:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/style-utils/-/style-utils-0.3.8.tgz#6ba4271bcc766dee4730bd51b3ef2552908dc111"
+  integrity sha512-RmGftIhY4tqtD1ERwKsVEDlt/M6UyxN/rcr95UmlooWmhtL0RwVUYJkpo1kSx3ppd9/JZzbknhy742zbMAawjQ==
+
 stylehacks@^5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/stylehacks/-/stylehacks-5.1.1.tgz"
@@ -22279,6 +22691,16 @@ svg-parser@^2.0.4:
   resolved "https://registry.npmjs.org/svg-parser/-/svg-parser-2.0.4.tgz"
   integrity sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==
 
+svg-path-properties@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/svg-path-properties/-/svg-path-properties-0.2.2.tgz#b073d81be7292eae0e233ab8a83f58dc27113296"
+  integrity sha512-GmrB+b6woz6CCdQe6w1GHs/1lt25l7SR5hmhF8jRdarpv/OgjLyuQygLu1makJapixeb1aQhP/Oa1iKi93o/aQ==
+
+svg-path-properties@^1.0.4:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/svg-path-properties/-/svg-path-properties-1.2.0.tgz#4214a25a1ded558e26e783c75131e584887834a5"
+  integrity sha512-MWN8NqNHWwNvYlepv6ui9T9KpRCqogprBuTTDLWztvjSljvhjyNCGJ6EynyAqUwteM5iRXhMl8arGDtcE7eIwQ==
+
 svgo@^2.7.0, svgo@^2.8.0:
   version "2.8.0"
   resolved "https://registry.npmjs.org/svgo/-/svgo-2.8.0.tgz"
@@ -22291,6 +22713,11 @@ svgo@^2.7.0, svgo@^2.8.0:
     csso "^4.2.0"
     picocolors "^1.0.0"
     stable "^0.1.8"
+
+svgpath@^2.2.1:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/svgpath/-/svgpath-2.6.0.tgz#5b160ef3d742b7dfd2d721bf90588d3450d7a90d"
+  integrity sha512-OIWR6bKzXvdXYyO4DK/UWa1VA1JeKq8E+0ug2DG98Y/vOmMpfZNj+TIG988HjfYSqtcy/hFOtZq/n/j5GSESNg==
 
 swagger-client@^3.20.0:
   version "3.20.0"
@@ -22710,6 +23137,13 @@ token-types@^5.0.0-alpha.2:
     "@tokenizer/token" "^0.3.0"
     ieee754 "^1.2.1"
 
+topojson-client@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/topojson-client/-/topojson-client-3.1.0.tgz#22e8b1ed08a2b922feeb4af6f53b6ef09a467b99"
+  integrity sha512-605uxS6bcYxGXw9qi62XyrV6Q3xwbndjachmNxu8HWTtVPxZfEJN9fd/SZS1Q54Sn2y0TMyMxFj/cJINqGHrKw==
+  dependencies:
+    commander "2"
+
 toposort@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/toposort/-/toposort-2.0.2.tgz"
@@ -22903,6 +23337,23 @@ tunnel@0.0.6, tunnel@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/tunnel/-/tunnel-0.0.6.tgz"
   integrity sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha512-PZBtLYcCLtEcjL14Fzb1gSxPBeL7nWvGhO5ZFPGqziCcr8uvHp0NDmdjBchp6KHL+tExcg0m3NISmKxhU394dA==
+
+tween-one@^1.0.50:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/tween-one/-/tween-one-1.2.7.tgz#80051e9434f145c0e31623790378af0f23fe3d00"
+  integrity sha512-F+Z9LO9GsYqf0j5bgNhAF98RDrAZ7QjQrujJ2lVYSHl4+dBPW/atHluL2bwclZf8Vo0Yo96f6pw2uq1OGzpC/Q==
+  dependencies:
+    "@babel/runtime" "^7.11.1"
+    flubber "^0.4.2"
+    raf "^3.4.1"
+    style-utils "^0.3.6"
+    svg-path-properties "^1.0.4"
+    tween-functions "^1.2.0"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"

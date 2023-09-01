@@ -43,6 +43,7 @@ import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePageTemplate } from './components/home/HomePage';
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
+import { InventoryPage } from '@internal/plugin-inventory';
 
 export const createCustomThemeOverrides = (
   theme: BackstageTheme,
@@ -197,6 +198,7 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/inventory" element={<InventoryPage />} />
   </FlatRoutes>
 );
 
