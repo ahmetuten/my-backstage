@@ -1,1 +1,0 @@
-export { DatabaseListPage } from './DatabaseListPage';
