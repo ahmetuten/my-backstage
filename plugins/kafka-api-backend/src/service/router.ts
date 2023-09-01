@@ -3,6 +3,9 @@ import express, { response } from 'express';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
 import { Kafka } from 'kafkajs';
+import { Knex } from 'knex';
+
+const kafkaTable = 'kafka_table';
 
 export interface RouterOptions {
   logger: Logger;
@@ -15,7 +18,8 @@ export async function createRouter(
 
   const router = Router();
   router.use(express.json());
-
+  
+  // create topic function
   const addKafkaTopic = async (
     topicName: string, 
     topicIp: string, 
@@ -30,6 +34,7 @@ export async function createRouter(
 
     const admin = kafka.admin();
     await admin.connect();
+
     admin.createTopics({
       topics: [{
         topic: topicName,
