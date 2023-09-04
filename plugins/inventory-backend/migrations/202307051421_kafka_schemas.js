@@ -50,3 +50,5 @@ exports.up = async function up(knex) {
   exports.down = async function down(knex) {
     await knex.schema.dropTable('t_kafkas');
   };
+
+  //db icinde tablo olusturuyor

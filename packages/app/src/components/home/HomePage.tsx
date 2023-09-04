@@ -1,8 +1,3 @@
-import {
-  HomePageToolkit,
-  HomePageCompanyLogo,
-  HomePageStarredEntities,
-} from '@backstage/plugin-home';
 import { Content, Page } from '@backstage/core-components';
 import { MockStarredEntitiesApi } from '@backstage/plugin-catalog-react';
 import { HomePageSearchBar } from '@backstage/plugin-search';
@@ -12,6 +7,11 @@ import React from 'react';
 import TomPayLogo from './TomPayLogo';
 import ToolkitTempIcon from './ToolkitTempIcon';
 import './home-page.css';
+import {
+  HomePageToolkit,
+  HomePageCompanyLogo,
+  HomePageStarredEntities,
+} from '@backstage/plugin-home';
 
 const entities = [
   {
